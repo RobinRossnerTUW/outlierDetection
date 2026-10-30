@@ -1,0 +1,42 @@
+super_fancy_new_name: cvl_circle_id_27_writers
+log_dir: experiments
+logger: wandb
+grayscale: false
+
+trainset:
+  dataset: cvl
+  set: train
+
+
+circleid_split_mode: true
+circleid_known_writer_count: null   # first 100 sorted writers -> known
+circleid_train_pages_per_writer: 4 # their first 4 (of 7) pages -> train
+skip_internal_test: true
+checkpoint: null
+circleid_writer_offset: 0
+
+
+
+
+model:
+  name: resnet56
+  num_clusters: 32   # PHASE 1 WINNER - keep at 32 for all runs except diagonal checks (use 64)
+
+train_options:
+  batch_size: 128
+  epochs: 30
+  loss: triplet        # VARY THIS: triplet | multisimilarity
+  margin: 0.3          # VARY THIS (only matters if loss=triplet): 0.05 | 0.1 | 0.3
+  sampler_m: 8         # VARY THIS: 4 | 8 | 16
+  length_before_new_iter: 140000
+
+optimizer_options:
+  base_lr: 0.0001
+  final_lr: 0.000001
+  warmup_epochs: 3
+  wd: 0.0
+
+pca_dims: [128]
+test_batch_size: 256
+train_label: writer
+use_test_as_validation: true

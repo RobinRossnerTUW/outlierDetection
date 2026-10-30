@@ -1,0 +1,36 @@
+super_fancy_new_name: icdar17_c200_triplet_m01_s16
+log_dir: experiments
+logger: wandb
+
+grayscale: false
+data_augmentation: morph
+
+trainset:
+  dataset: icdar2017
+  set: train
+testset:
+  dataset: icdar2017
+  set: test
+
+model:
+  name: resnet56
+  num_clusters: 200
+
+train_options:
+  epochs: 30
+  batch_size: 1024
+  loss: triplet
+  margin: 0.1
+  sampler_m: 16
+  length_before_new_iter: 612000
+
+optimizer_options:
+  base_lr: 0.0001
+  final_lr: 0.00001
+  warmup_epochs: 5
+  wd: 0.0
+
+pca_dims: [400, 128, -1]
+test_batch_size: 512
+train_label: writer
+use_test_as_validation: true

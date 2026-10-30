@@ -1,0 +1,129 @@
+
+icdar2017-train: 
+    in_dir : /data/mpeer/icdar2017-train_binarized
+    out_dir : /data/mpeer/resources/icdar2017_train_sift_patches_binarized_1000
+    win_size : 32
+    patches_per_page : -1       
+    num_of_cluster : 1000
+    sigma : 2.5
+    black_pixel_thresh : -1
+    white_pixel_thresh : 0.95
+    centered : True
+    
+icdar2017-test:
+    in_dir : /data/mpeer/icdar2017-test_binarized
+    out_dir : /data/mpeer/resources/icdar2017_test_sift_patches_binarized_2kpp
+    win_size : 32
+    patches_per_page : 2000       
+    sigma : 2.5
+    black_pixel_thresh : -1
+    white_pixel_thresh : 0.95
+    centered : True
+
+
+icdar2013_train : 
+    in_dir : /data/mpeer/icdar2013-train
+    out_dir : /data/mpeer/resources/icdar2013_train_sift_patches_100
+    win_size : 32
+    patches_per_page : -1       
+    num_of_cluster : 100
+    sigma : 1.6
+    black_pixel_thresh : -1
+    white_pixel_thresh : 0.95
+    centered : True
+
+icdar2013_test :
+    in_dir : /data/mpeer/icdar2013-test
+    out_dir : /data/mpeer/resources/icdar2013_test_sift_patches_binarized
+    win_size : 32
+    patches_per_page : 2000       
+    sigma : 1.6
+    black_pixel_thresh : -1
+    white_pixel_thresh : 0.95
+    centered : True
+
+icdar19_test :
+    in_dir : /data/mpeer/databases/wi_comp_19_test
+    out_dir : /data/mpeer/resources/wi_comp_19_test_patches
+    win_size : 32
+    patches_per_page : 2000       
+    sigma : 3.5
+    edge_pixels : 0.125
+
+icdar17_test :
+    in_dir : /data/mpeer/icdar2017-test-color
+    out_dir : /data/mpeer/resources/icdar2017-test-color_patches
+    win_size : 32
+    patches_per_page : 2000
+    sigma : 2.5
+    edge_pixels : 0.125
+
+maslot_combined:
+    in_dir : /data/rrossner/datasets/MaSLoT_download
+    out_dir : /data/rrossner/datasets/MaSLoT_Sift_Patches_Color
+    win_size : 32
+    patches_per_page : -1
+    num_of_cluster : 1000
+    sigma : 2.5
+    edge_pixels : 0.125
+
+
+cvl_train:
+    in_dir:  /data/rrossner/datasets/CVL/cvl_train_binarized
+    out_dir: /data/rrossner/datasets/CVL/cvl_train_patches_bin
+    win_size: 32
+    patches_per_page: -1
+    sigma: 2.5
+    black_pixel_thresh: -1
+    white_pixel_thresh: 0.95
+    centered: True
+
+cvl_test:
+    in_dir:  /data/rrossner/datasets/CVL/cvl_test_binarized
+    out_dir: /data/rrossner/datasets/CVL/cvl_test_patches_bin
+    win_size: 32
+    patches_per_page: 2000
+    sigma: 2.5
+    black_pixel_thresh: -1
+    white_pixel_thresh: 0.95
+    centered: True
+
+iam_train:
+    in_dir:  /data/rrossner/datasets/IAM/iam_train
+    out_dir: /data/rrossner/datasets/IAM/iam_train_patches
+    win_size: 32
+    patches_per_page: -1
+    sigma: 2.5
+    black_pixel_thresh: -1
+    white_pixel_thresh: 0.95
+    centered: True
+
+iam_test:
+    in_dir:  /data/rrossner/datasets/IAM/iam_test
+    out_dir: /data/rrossner/datasets/IAM/iam_test_patches
+    win_size: 32
+    patches_per_page: 2000
+    sigma: 2.5
+    black_pixel_thresh: -1
+    white_pixel_thresh: 0.95
+    centered: True
+
+iam_train_threshold:
+    in_dir:  /data/rrossner/datasets/IAM/train_threshold
+    out_dir: /data/rrossner/datasets/IAM/train_threshold_patches
+    win_size: 32
+    patches_per_page: -1
+    sigma: 2.5
+    black_pixel_thresh: -1
+    white_pixel_thresh: 0.95
+    centered: True
+
+iam_test_threshold:
+    in_dir:  /data/rrossner/datasets/IAM/test_threshold
+    out_dir: /data/rrossner/datasets/IAM/test_threshold_patches
+    win_size: 32
+    patches_per_page: 2000
+    sigma: 2.5
+    black_pixel_thresh: -1
+    white_pixel_thresh: 0.95
+    centered: True

@@ -1,0 +1,35 @@
+# Training params copied from config/cvl/cluster_285k.yml, dataset swapped to MaSLoT (train == test)
+super_fancy_new_name: maslot_cvl_params
+log_dir: experiments
+logger: wandb
+grayscale: false
+
+trainset:
+  dataset: maslot
+  set: train
+testset:
+  dataset: maslot
+  set: test
+
+model:
+  name: resnet56
+  num_clusters: 32
+
+train_options:
+  batch_size: 256
+  epochs: 30
+  loss: triplet
+  margin: 0.3
+  sampler_m: 8
+  length_before_new_iter: 285000
+
+optimizer_options:
+  base_lr: 0.0001
+  final_lr: 0.000001
+  warmup_epochs: 3
+  wd: 0.0
+
+pca_dims: [128]
+test_batch_size: 256
+train_label: cluster
+use_test_as_validation: true

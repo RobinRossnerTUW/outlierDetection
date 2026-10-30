@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+venv*/
+.venv/
+.ipynb_checkpoints/
+
+# Experiment outputs and logs
+experiments/
+logs/
+wandb/
+*.log
+
+# Models, features and caches
+*.pt
+*.pth
+*.ckpt
+*.h5
+*.npy
+*.npz
+*.pkl
+*.pckl
+
+# Generated images (README assets are kept)
+*.png
+*.jpg
+*.jpeg
+!**/assets/*.png
+
+# Datasets and caches
+icdar24/datasets/icdar2017-train-binarized-patches_clustered.csv
+icdar24/datasets_example/*.csv
+map_check_cache/

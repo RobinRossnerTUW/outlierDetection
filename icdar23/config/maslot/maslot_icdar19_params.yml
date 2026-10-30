@@ -1,0 +1,51 @@
+# Training params copied from config/icdar2019.yml, dataset swapped to MaSLoT (train == test)
+trainset:
+  dataset: maslot
+  set: train
+
+testset:
+  dataset: maslot
+  set: test
+
+log_dir: experiments
+logger: wandb
+train_label: cluster
+
+grayscale: False
+
+data_augmentation: morph
+
+optimizer_options:
+  optimizer: adam
+  base_lr: 0.0001
+  wd: 0
+  final_lr: 0.00001
+  warmup_epochs: 5
+
+super_fancy_new_name: maslot_icdar19_params
+
+model:
+    name: resnet56
+    num_clusters: 100
+    encoding: netrvlad
+
+train_options:
+  epochs: 30
+  batch_size: 1024
+  callback: early_stopping
+  callback_patience: 5
+
+  loss: triplet
+  margin: 0.1
+  sampler_m: 16
+  length_before_new_iter: 512000
+
+eval_options:
+    pca_dim: 400
+    gmp_alpha: 100
+
+# added vs icdar2019.yml: main_new.py reads pca_dims (not eval_options.pca_dim), and this trains on all patches (train == test)
+pca_dims: [400]
+use_test_as_validation: true
+
+test_batch_size: 512

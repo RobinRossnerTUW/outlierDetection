@@ -1,0 +1,37 @@
+# ======================================================
+# PHASE 2 BASE CONFIG - copy and change marked lines only
+# ======================================================
+super_fancy_new_name: cvl_c32_triplet_m03_s8_100k
+log_dir: experiments
+logger: wandb
+grayscale: false
+
+trainset:
+  dataset: cvl
+  set: train
+testset:
+  dataset: cvl
+  set: test
+
+model:
+  name: resnet56
+  num_clusters: 32   # PHASE 1 WINNER - keep at 32 for all runs except diagonal checks (use 64)
+
+train_options:
+  batch_size: 128
+  epochs: 30
+  loss: triplet        # VARY THIS: triplet | multisimilarity
+  margin: 0.3          # VARY THIS (only matters if loss=triplet): 0.05 | 0.1 | 0.3
+  sampler_m: 8         # VARY THIS: 4 | 8 | 16
+  length_before_new_iter: 285000
+
+optimizer_options:
+  base_lr: 0.0001
+  final_lr: 0.000001
+  warmup_epochs: 3
+  wd: 0.0
+
+pca_dims: [128]
+test_batch_size: 256
+train_label: writer
+use_test_as_validation: true

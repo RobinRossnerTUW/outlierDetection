@@ -1,0 +1,2 @@
+bal_acc,f1_unknown,precision_unknown,recall_unknown,writer_id_acc_known,pred_unknown_rate,true_unknown_rate,tau,pooling,n_bootstrap,n_known_writers,n_unseen_writers,n_cal_known,n_eval_known,n_cal_unseen,n_eval_unseen,test_partA_pages,test_partB_pages,point_bal_acc,point_writer_id_acc_known
+0.9087,0.9035,0.998,0.8255,0.9884,0.6816,0.824,0.5331,sum,10,100,183,20,80,30,153,765,158,0.9093,0.9873
